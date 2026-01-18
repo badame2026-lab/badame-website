@@ -54,28 +54,27 @@ export default function App() {
         </div>
       </section>
 
-        whatsapp: {
-    position: "fixed",
-    right: "18px",
-    bottom: "18px",
-    width: "58px",
-    height: "58px",
-    borderRadius: "50%",
-    backgroundColor: "#25D366",
-    color: "#fff",
-    fontSize: "28px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textDecoration: "none",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
-    zIndex: 1000,
-  },
+        .whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #fff;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
 
       <a href="https://wa.me/919100330272" class="whatsapp" target="_blank">
   💬
 </a>
-
 
       {/* Footer */}
       <footer style={styles.footer}>
