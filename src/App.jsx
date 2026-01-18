@@ -1,184 +1,52 @@
-export default function App() {
-  return (
-    <div style={styles.page}>
-      {/* Header */}
-      <header style={styles.header}>
-        <h1 style={styles.logo}>🥛 Badamé</h1>
-        <p style={styles.tagline}>Rich • Nutty • Creamy</p>
-      </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website with WhatsApp Button</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      {/* Hero Section */}
-      <section style={styles.hero}>
-        <h2 style={styles.heroTitle}>
-          Immerse yourself in a <span style={styles.highlight}>rich, nutty</span> experience
-        </h2>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 2000px; /* just to allow scroll */
+      margin: 0;
+      padding: 20px;
+    }
 
-        <div style={styles.badges}>
-          <span style={styles.hot}>🔥 Hot Available</span>
-          <span style={styles.cold}>❄️ Cold Available</span>
-        </div>
+    /* WhatsApp Floating Button */
+    .whatsapp-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      z-index: 99999;
+    }
 
-        <p style={styles.heroText}>
-          Crafted with fresh milk and premium almonds for a royal taste in every sip.
-        </p>
-      </section>
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
 
-      {/* Features */}
-      <section style={styles.features}>
-        <div style={styles.card}>
-          <h3>🥛 Fresh Milk</h3>
-          <p>Pure, hygienic & sourced daily</p>
-        </div>
-        <div style={styles.card}>
-          <h3>🌰 Premium Badam</h3>
-          <p>Real almond taste with rich texture</p>
-        </div>
-        <div style={styles.card}>
-          <h3>🔥❄️ Hot & Cold</h3>
-          <p>Perfect for every season</p>
-        </div>
-      </section>
+<body>
 
-      {/* Pricing */}
-      <section style={styles.pricing}>
-        <h2>Our Pricing</h2>
-        <div style={styles.priceCards}>
-          <div style={styles.priceCard}>
-            <h3>200 ml</h3>
-            <p style={styles.price}>₹30</p>
-          </div>
-          <div style={styles.priceCard}>
-            <h3>500 ml</h3>
-            <p style={styles.price}>₹70</p>
-          </div>
-        </div>
-      </section>
+  <h1>My Website</h1>
+  <p>This is a sample page with a floating WhatsApp button.</p>
 
-        .whatsapp {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background-color: #25D366;
-  color: #fff;
-  font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919100330272" class="whatsapp-btn" target="_blank">
+    💬
+  </a>
 
-      <a href="https://wa.me/919100330272" class="whatsapp" target="_blank">
-  💬
-</a>
-
-      {/* Footer */}
-      <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} Badamé</p>
-        <p>A Rich, Nutty Experience</p>
-      </footer>
-    </div>
-  );
-}
-
-const styles = {
-  page: {
-    fontFamily: "Segoe UI, sans-serif",
-    backgroundColor: "#FFF8ED",
-    color: "#3A1F0F",
-    minHeight: "100vh",
-    textAlign: "center",
-  },
-  header: {
-    backgroundColor: "#F6C33D",
-    padding: "20px",
-  },
-  logo: {
-    margin: 0,
-    fontSize: "2.5rem",
-  },
-  tagline: {
-    margin: "5px 0 0",
-    fontWeight: "500",
-  },
-  hero: {
-    padding: "40px 20px",
-  },
-  heroTitle: {
-    fontSize: "1.8rem",
-    marginBottom: "15px",
-  },
-  highlight: {
-    color: "#C4161C",
-  },
-  badges: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "10px",
-    marginBottom: "15px",
-    flexWrap: "wrap",
-  },
-  hot: {
-    background: "#FFE2E2",
-    color: "#C4161C",
-    padding: "6px 14px",
-    borderRadius: "20px",
-    fontWeight: "600",
-  },
-  cold: {
-    background: "#E6F0FF",
-    color: "#1D4ED8",
-    padding: "6px 14px",
-    borderRadius: "20px",
-    fontWeight: "600",
-  },
-  heroText: {
-    maxWidth: "500px",
-    margin: "0 auto",
-    fontSize: "1rem",
-  },
-  features: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-    gap: "20px",
-    padding: "30px 20px",
-  },
-  card: {
-    background: "#FFFFFF",
-    padding: "20px",
-    borderRadius: "18px",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
-  },
-  pricing: {
-    padding: "30px 20px",
-    backgroundColor: "#F6C33D",
-  },
-  priceCards: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-    flexWrap: "wrap",
-    marginTop: "20px",
-  },
-  priceCard: {
-    background: "#FFFFFF",
-    padding: "20px 30px",
-    borderRadius: "18px",
-    minWidth: "150px",
-  },
-  price: {
-    fontSize: "1.6rem",
-    color: "#C4161C",
-    fontWeight: "700",
-  },
-  footer: {
-    background: "#3A1F0F",
-    color: "#FFFFFF",
-    padding: "20px",
-    marginTop: "20px",
-  },
-};
+</body>
+</html>
