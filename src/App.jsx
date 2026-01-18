@@ -1,18 +1,72 @@
-<!-- Floating Cart -->
-<div id="floating-cart" onclick="toggleCart()">🛒</div>
+{/* Floating Cart */}
+<div className="floating-cart" onClick={() => setOpen(true)}>🛒</div>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/919100330272" target="_blank" id="floating-wa">💬</a>
+{/* Floating WhatsApp */}
+<a
+  href="https://wa.me/919XXXXXXXXX"
+  target="_blank"
+  className="floating-wa"
+>
+  💬
+</a>
 
-<!-- Cart Popup -->
-<div id="cart-popup">
-  <span class="close" onclick="toggleCart()">✖</span>
-  <h3>Your Order</h3>
-  <div id="cart-items"></div>
-  <button onclick="orderWhatsApp()">Order on WhatsApp</button>
-</div>
-<style>
-#floating-wa {
+{/* Cart Popup */}
+{open && (
+  <div className="cart-popup">
+    <span className="close" onClick={() => setOpen(false)}>✖</span>
+    <h3>Your Order</h3>
+
+    {cart.map((item, i) => (
+      <p key={i}>{item.name} – ₹{item.price}</p>
+    ))}
+
+    <button onClick={orderWhatsApp}>Order on WhatsApp</button>
+  </div>
+)}
+{/* Floating Cart */}
+<div className="floating-cart" onClick={() => setOpen(true)}>🛒</div>
+
+{/* Floating WhatsApp */}
+<a
+  href="https://wa.me/919XXXXXXXXX"
+  target="_blank"
+  className="floating-wa"
+>
+  💬
+</a>
+
+{/* Cart Popup */}
+{open && (
+  <div className="cart-popup">
+    <span className="close" onClick={() => setOpen(false)}>✖</span>
+    <h3>Your Order</h3>
+
+    {cart.map((item, i) => (
+      <p key={i}>{item.name} – ₹{item.price}</p>
+    ))}
+
+    <button onClick={orderWhatsApp}>Order on WhatsApp</button>
+  </div>
+)}
+import { useState } from "react";
+
+function App() {
+  const [cart, setCart] = useState([]);
+  const [open, setOpen] = useState(false);
+const addItem = (name, price) => {
+  setCart([...cart, { name, price }]);
+};
+
+const orderWhatsApp = () => {
+  let msg = "Order from Badamé:%0A";
+  cart.forEach(i => {
+    msg += `${i.name} - ₹${i.price}%0A`;
+  });
+  window.open("https://wa.me/919100330272?text=" + msg);
+};
+onClick={() => addItem("Badam Milk 200ml", 30)}
+onClick={() => addItem("Badam Milk 500ml", 70)}
+.floating-wa {
   position: fixed;
   right: 18px;
   bottom: 18px;
@@ -29,7 +83,7 @@
   z-index: 9999;
 }
 
-#floating-cart {
+.floating-cart {
   position: fixed;
   right: 18px;
   bottom: 90px;
@@ -46,7 +100,7 @@
   z-index: 9999;
 }
 
-#cart-popup {
+.cart-popup {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -54,56 +108,6 @@
   background: #fff;
   padding: 15px;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
-  display: none;
   z-index: 10000;
 }
-
-#cart-popup button {
-  width: 100%;
-  padding: 12px;
-  background: #25D366;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  cursor: pointer;
-}
-</style>
-<script>
-let cart = [];
-
-function addItem(name, price) {
-  cart.push({ name, price });
-  alert("Added to cart");
-}
-
-function toggleCart() {
-  let popup = document.getElementById("cart-popup");
-  popup.style.display = popup.style.display === "block" ? "none" : "block";
-  renderCart();
-}
-
-function renderCart() {
-  let box = document.getElementById("cart-items");
-  let total = 0;
-  box.innerHTML = "";
-
-  cart.forEach(item => {
-    total += item.price;
-    box.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
-  });
-
-  box.innerHTML += `<strong>Total: ₹${total}</strong>`;
-}
-
-function orderWhatsApp() {
-  let msg = "Order from Badamé:%0A";
-  cart.forEach(i => msg += `${i.name} - ₹${i.price}%0A`);
-  window.open("https://wa.me/919XXXXXXXXX?text=" + msg);
-}
-</script>
+import "./App.css";
