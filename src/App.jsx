@@ -54,6 +54,24 @@ export default function App() {
         </div>
       </section>
 
+        whatsapp: {
+    position: "fixed",
+    right: "18px",
+    bottom: "18px",
+    width: "58px",
+    height: "58px",
+    borderRadius: "50%",
+    backgroundColor: "#25D366",
+    color: "#fff",
+    fontSize: "28px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textDecoration: "none",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+    zIndex: 1000,
+  },
+
       {/* Footer */}
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} Badamé</p>
