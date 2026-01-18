@@ -72,6 +72,11 @@ export default function App() {
     zIndex: 1000,
   },
 
+      <a href="https://wa.me/919100330272" class="whatsapp" target="_blank">
+  💬
+</a>
+
+
       {/* Footer */}
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} Badamé</p>
